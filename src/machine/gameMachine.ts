@@ -15,7 +15,7 @@ export type GameEvent =
   | { type: "RESET" }
   | { type: "AWARD_POINTS"; winner: Players };
 
-export const tennisMachine = createMachine<GameContext, GameEvent>(
+export const gameMachine = createMachine<GameContext, GameEvent>(
   {
     id: "tennis",
     initial: "play",

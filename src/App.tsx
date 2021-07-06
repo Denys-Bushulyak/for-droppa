@@ -1,12 +1,12 @@
 import { useMachine } from "@xstate/react";
 import React from "react";
 import "./App.css";
-import { GameContext, GameEvent, tennisMachine } from "./machine/gameMachine";
+import { GameContext, GameEvent, gameMachine } from "./machine/gameMachine";
 import { Players } from "./types/Players";
 import { getScore } from "./utils/getScore";
 
 function App() {
-  const [state, send] = useMachine<GameContext, GameEvent>(tennisMachine);
+  const [state, send] = useMachine<GameContext, GameEvent>(gameMachine);
 
   function handleClick(winner: Players) {
     return () => {
